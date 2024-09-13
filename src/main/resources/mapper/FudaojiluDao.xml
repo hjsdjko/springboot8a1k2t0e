@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.dao.FudaojiluDao">
+
+	<!-- 可根据自己的需求，是否要使用 -->
+    <resultMap type="com.entity.FudaojiluEntity" id="fudaojiluMap">
+        <result property="ertongzhanghao" column="ertongzhanghao"/>
+        <result property="ertongxingming" column="ertongxingming"/>
+        <result property="touxiang" column="touxiang"/>
+        <result property="lianxifangshi" column="lianxifangshi"/>
+        <result property="jiatingzhuzhi" column="jiatingzhuzhi"/>
+        <result property="fudaoshijian" column="fudaoshijian"/>
+        <result property="fudaoneirong" column="fudaoneirong"/>
+        <result property="fudaoqingkuang" column="fudaoqingkuang"/>
+        <result property="yishenggonghao" column="yishenggonghao"/>
+        <result property="yishengxingming" column="yishengxingming"/>
+    </resultMap>
+
+	<select id="selectListVO"
+		resultType="com.entity.vo.FudaojiluVO" >
+		SELECT * FROM fudaojilu  fudaojilu         
+        <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+	<select id="selectVO"
+		resultType="com.entity.vo.FudaojiluVO" >
+		SELECT  fudaojilu.* FROM fudaojilu  fudaojilu 	
+ 		<where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+
+    <select id="selectListView"
+		resultType="com.entity.view.FudaojiluView" >
+
+		SELECT  fudaojilu.* FROM fudaojilu  fudaojilu 	        
+        <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+	<select id="selectView"
+		resultType="com.entity.view.FudaojiluView" >
+		SELECT * FROM fudaojilu  fudaojilu <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+
+
+</mapper>
